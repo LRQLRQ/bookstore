@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>电子商务网站</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body onLoad="hello()" onUnLoad="byebye()">
+
+
+
+	<div id="header">
+		<div class="logo"> <img src="images/logo.gif" width="135" height="55"/></div>
+		<div class="search">
+			<input type="text" name="keywords" class="input1" />
+			<input type="image" src="images/icon_search.gif" class="input2" />
+		</div>
+		<div class="login"><a>登录</a></div>
+
+	</div>
+	<div id="nav">
+		<div class="navLeft"></div>
+		<div class="navCenter">
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">新品上架</a></li>
+			<li><a href="#">特价商品</a></li>
+			<li><a href="#">查看订单</a></li>
+			<li><a href="#">购物车</a></li>
+			<li><a href="#">会员修改</a></li>
+			<li class="nobg"><a href="#" class="a2">联系我们</a></li>
+		</ul>
+		</div>
+		<div class="navRight"></div>
+		<div class="clear"></div>
+	</div>
+	<div id="banner">
+		<div id="scrollDiv" class="scrollDiv">
+			<div id="scrollBegin" class="scrollBegin">
+				<img src="images/banner1.jpg" width="1400" height="300" />
+				<img src="images/banner2.jpg" width="1400" height="300" />
+				<img src="images/banner3.jpg" width="1400" height="300" />
+				<img src="images/banner4.jpg" width="1400" height="300" />
+
+			</div>
+			<div id="scrollEnd" class="scrollEnd"></div>
+		</div>
+
+	</div>
+	<div id="main">
+		<div id="sort">
+			<ul>
+				<li><a href="#">类别一</a></li>
+				<li><a href="#">类别二</a></li>
+				<li><a href="#">类别三</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<div id="goodsFree">
+			    <div class="iconFree"><a href="#"><img src="images/icon_more.gif" width="44" height="16" /></a></div>
+			    <hr />
+			    <div class="goodsFree">
+			        <div class="goodsOne">
+			            <div class="goodsOneImg"> <a href="#"> <img src="goodspicture/1.jpg" width="140" height="200" /> </a></div>
+				        <div class="goodsOneText">
+				            <div>CSS基础教程</div>
+				            <div><font style="text-decoration:line-through;" class="red">￥25.5元</font></div>
+				            <div>￥15.5元</div>
+				            <div><a><img src="images/icon_introduce.gif" width="94" height="25" /></a></div>
+				        </div>
+			        </div>
+			        <div class="clear"></div>
+			    </div>
+			</div>
+
+			<div id="goodsNew">
+
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<hr class="hrRed" />
+		<div class="iconAd"><img src="images/fg_ad.gif" width="960px" height="76px"></div>
+		<div class="link">
+			<div class="linkName"><a href="#" class="a4"></a> </div>
+			<div class="clear"></div>
+		</div>
+		<div class="bgLoginA"> <a href="#" class="a5">进入后台</a> </div>
+		<div class="caution lightgrey font12"> 版权所有：电子商务与快递物流综合信息技术实训平台<br/>
+		Copyright&copy;All Rights Reserved<br/>
+		邮编：100876
+		</div>
+		<div class="clear"></div>
+
+	</div>
+
+	<div class="affiche">
+		<div class="afficheTitle white bold">&nbsp;商城公告</div>
+		<div class="afficheMore"><a href="#">更多</a></div>
+		<div class="clear"></div>
+
+		<ul>
+			<li><img src="images/icon_1.gif" width="20" height="20"/>[公告] <a href="#"></a></li>
+			<li>1.学习网页源码</li>
+			<li>2.进行模仿</li>
+			<li>3.化为己用</li>
+		</ul>
+	</div>
+
+<script type="text/JavaScript">
+	function hello(){
+		alert("欢迎您的光临！") ;
+	} 
+	function byebye(){
+		alert("您要走了？下次别来了！") ;
+	}
+	var clickme = function() {
+		alert("点我干嘛?");
+	}
+
+	var speed = 10;
+	var scroll_div = document.getElementById("scrollDiv");
+	var scroll_begin = document.getElementById("scrollBegin");
+	var scroll_end = document.getElementById("scrollEnd");
+	scroll_end.innerHTML = scroll_begin.innerHTML;
+	function Marquee() {
+		if (scroll_end.offsetWidth - scroll_div.scrollLeft <= 0)
+			scroll_div.scrollLeft -= scroll_begin.offsetWidth;
+		else
+			scroll_div.scrollLeft++;
+	}
+	var MyMar = setInterval(Marquee, speed);
+	scroll_div.onmouseover = function() {
+		clearInterval(MyMar);
+	};
+	scroll_div.onmouseout = function() {
+		MyMar = setInterval(Marquee, speed);
+	};
+		
+</script>
+</body>
+</html>
